@@ -1,0 +1,56 @@
+x<-5
+x<-10
+y<-10.5
+a<-5L
+is.integer(a)
+name<-"John"
+greeting<-"Hello,R!"
+flag1<-TRUE
+flag2<-FALSE
+z<-2+3i
+r<-charToRaw("R programming")
+class(x)
+typeof(x)
+Num_vec<-c(1,2,3,4,5)
+char_vec<-c("A","B","C")
+log_vec<-c(TRUE,FALSE,TRUE)
+num_vec[2]
+num_vec*2
+mat<-matrix(1:9,nrow=3,ncol=3)
+mat(2,3)
+mat*2
+my_list<-list(num_vec,mat,char_vec)
+df<-data.frame(
+  name=c("John","Jane","Tom"),
+  age=c(23,35,28),
+  salary=c(50000,60000,58000)
+)
+extract_names<-df$name
+print(extract_names)
+extract_age<-df[["name"]]
+print(extract_age)
+df$gender<-c("M","F","M")
+row_1<-df[1,]
+df<-rbind(df,data.frame(
+  name="Alice",
+  age=30,
+  salary=55000,
+  gender=F))
+library(dplyr)
+df_filtered<-filter(df,age>30)
+df_selected<-select(df,name,age)
+df_summary<-summarize(df,mean_salary=mean(salary))
+result<-df%>%
+  filter(age>30)%>%
+  summarize(mean_salary=mean(salary))
+df_imported<-read.csv("data.csv")
+write.csv(df,"output.csv")
+df<-data.frame(
+  name=c("Alice","Bob","Charles"),
+  age=c(25,32,29),
+  score=c(90,75,88)
+)
+df_filtered<-filter(df,age>28)
+df_selected<-select(df_filtered,name,score)
+df_summary<-summarize(df_selected,avg_score=mean(score))
+print(df_summary)
